@@ -1,0 +1,1326 @@
+DOLMEXICA ENGINE MOVEMENT REGISTER VER. 01.01.02
+
+
+------------------[GENERAL]-------------------------
+
+CHARACTERNAME = [STICKLER] //No more than eight characters 
+
+TEXTURESIZE = [128] // The size those values here were made for.
+
+OFFSET = [45] 
+
+HEIGHT = [80] //In Pixels. Range: 0-128
+
+WIDTH = [10] //In Pixels. Range 0-128. 
+
+WALKING SPEED = [3] //In Pixels per Frame. Range: >0
+
+PALETTE = [NO]
+
+BACK BLOCKING = [YES]
+
+JUMP IDLE UP STRENGTH = [7] // Requires a lil try-n-error to get it right.
+
+JUMP FORWARD STRENGTH = [8]
+
+JUMP BACK STRENGTH = [6]
+
+JUMP FORWARD SPEED = [3]
+
+JUMP BACK SPEED = [1]
+
+DEFENSE = [0] //Amount substracted from enemy attacks. Experimental.
+
+REALCHARNAME = [STICKLER]
+
+AI = [STANDARD] //OFFENSIVE, DEFENSIVE, JUMPSTYLE, etc...
+
+SOUND EFFECT NAME = [MISSWKPN]
+SOUND EFFECT NAME = [MISSMDPN]
+SOUND EFFECT NAME = [MISSSTPN]
+SOUND EFFECT NAME = [HIT_WKPN]
+SOUND EFFECT NAME = [HIT_MDPN]
+SOUND EFFECT NAME = [HIT_STPN]
+
+
+------------------[ANIMATIONS]-------------------------
+
+#1 COMPULSORY ANIMATIONS
+
+---
+
+TYPE = [IDLE] //There's IDLE, ATTACK, THROW, COMBO, etc...
+
+NAME = [STANDING] //No more than eight characters.
+
+BUTTONS = [NONE] //Check this txt for more intel on this!
+
+LOOP = [YES] //Does the ANIMATION LOOP? Mostly redundant.
+
+FRAMEAMOUNT = [1] //How many frames?
+
+SPEED = [5] //For how many frames is each frame displayed? (Just a reminder: 60frames per second)
+
+LEVEL = [GROUND] //GROUND, AIR or CROUCH.
+
+---
+
+ID = [2] 
+
+TYPE = [WALKINGFORWARD] 
+
+NAME = [WALKINGF] //Short for: Walking Forward.
+
+BUTTONS = [DPAD_FORWARD] 
+
+LOOP = [YES] 
+
+FRAMEAMOUNT = [2] 
+
+SPEED = [20] 
+
+LEVEL = [GROUND]
+
+---
+
+
+ID = [3] 
+
+TYPE = [WALKINGBACK] 
+
+NAME = [WALKINGB] //Short for: Walking Backwards.
+
+BUTTONS = [DPAD_BACK] 
+
+LOOP = [YES] 
+
+FRAMEAMOUNT = [2] 
+
+SPEED = [20] 
+
+LEVEL = [GROUND]
+
+---
+
+ID = [4] 
+
+TYPE = [INTOCROUCH] 
+
+NAME = [CROU_PRE] //Short for: Going into a crouching position.
+
+BUTTONS = [DPAD_DOWN] 
+
+LOOP = [NO] 
+
+FRAMEAMOUNT = [1] 
+
+SPEED = [5] 
+
+LEVEL = [GROUND]
+
+---
+
+ID = [5] 
+
+TYPE = [CROUCH] 
+
+NAME = [CROU_DUR] //Short for: Remaining in a crouch position.
+
+BUTTONS = [DPAD_DOWN] 
+
+LOOP = [YES] 
+
+FRAMEAMOUNT = [1] 
+
+SPEED = [3] 
+
+LEVEL = [CROUCH]
+
+---
+
+ID = [6] 
+
+TYPE = [HIGHDAMAGE] 
+
+NAME = [HITHIGH0] //Short for: Receiving normal damage and getting knocked back.
+
+BUTTONS = [NONE] 
+
+LOOP = [NO] 
+
+FRAMEAMOUNT = [2] 
+
+SPEED = [7] 
+
+LEVEL = [GROUND]
+
+---
+
+ID = [7] 
+
+TYPE = [HIGHRECOVERY] 
+
+NAME = [BACKHIUP] //Short for: Recovering from HIGHDAMAGE.
+
+BUTTONS = [NONE] 
+
+LOOP = [NO] 
+
+FRAMEAMOUNT = [2] 
+
+SPEED = [7] 
+
+LEVEL = [GROUND]
+
+---
+ID = [8] 
+
+TYPE = [KNOCKEDDOWN] 
+
+NAME = [KNOKDOWN] //Short for: Getting knocked down by a legsweep or strong force.
+
+BUTTONS = [NONE] 
+
+LOOP = [NO] 
+
+FRAMEAMOUNT = [4] 
+
+SPEED = [6] 
+
+LEVEL = [GROUND]
+
+---
+
+ID = [9] 
+
+TYPE = [GETTINGUP] 
+
+NAME = [GETTINUP] //Short for: Recovering from getting knocked down.
+
+FRAMEAMOUNT = [3] 
+
+SPEED = [4] 
+
+---
+
+ID = [9] 
+
+TYPE = [BLOCK] 
+
+NAME = [BLOCKING] //Short for: Recovering from getting knocked down.
+
+BUTTONS = [NONE] 
+
+LOOP = [NO] 
+
+FRAMEAMOUNT = [1] 
+
+SPEED = [6] 
+
+LEVEL = [GROUND]
+
+---
+
+ID = [9] 
+
+TYPE = [CROUCHBLOCK] 
+
+NAME = [CROUBLOC] //Short for: Recovering from getting knocked down.
+
+BUTTONS = [NONE] 
+
+LOOP = [NO] 
+
+FRAMEAMOUNT = [1] 
+
+SPEED = [6] 
+
+LEVEL = [GROUND]
+
+---
+ID = [9] 
+
+TYPE = [VICTORY] 
+
+NAME = [STANDING] //Short for: Recovering from getting knocked down.
+
+BUTTONS = [NONE] 
+
+LOOP = [NO] 
+
+FRAMEAMOUNT = [1] 
+
+SPEED = [6] 
+
+LEVEL = [GROUND]
+
+---
+
+ID = [9] 
+
+TYPE = [CROUCHDAMAGE] 
+
+NAME = [CROU_HIT] //Short for: Recovering from getting knocked down.
+
+FRAMEAMOUNT = [3] 
+
+SPEED = [6] 
+
+---
+
+ID = [9] 
+
+TYPE = [CROUCHRECOVERY] 
+
+NAME = [BACKLOUP] //Short for: Recovering from getting knocked down.
+
+FRAMEAMOUNT = [3] 
+
+SPEED = [6] 
+
+###
+
+#2 JUST JUMPING UP
+
+---
+
+TYPE = [JUMPSTART] //The character's Animation before he starts the Jump.
+
+NAME = [JUMPING1] //Short for: Well, I just numbered them. Why not. 
+
+LOOP = [NO] 
+
+FRAMEAMOUNT = [1] 
+
+SPEED = [4] 
+
+---
+
+TYPE = [JUMPIDLEUP] //The "normal" Jumping Animation
+
+NAME = [JUMPING2] //Short for: JumpAnimation #2. Who would've guessed.
+
+LOOP = [NO] 
+
+FRAMEAMOUNT = [3] 
+
+SPEED = [4]
+
+---
+
+TYPE = [JUMPLOOP] //The "normal" Jumping Animation
+
+NAME = [JUMPING4] //Short for: JumpAnimation #2. Who would've guessed.
+
+LOOP = [YES] 
+
+FRAMEAMOUNT = [1] 
+
+SPEED = [2]
+
+###
+
+#3 JUMPING FORWARD
+
+---
+
+TYPE = [JUMPSTART] //The character's Animation before he starts the Jump.
+
+NAME = [JUMPING1] //Short for: Well, I just numbered them. Why not. 
+
+LOOP = [NO] 
+
+FRAMEAMOUNT = [1] 
+
+SPEED = [4] 
+
+---
+
+TYPE = [JUMPIDLEUP] //The "normal" Jumping Animation
+
+NAME = [JUMPING2] //Short for: JumpAnimation #2. Who would've guessed.
+
+LOOP = [NO] 
+
+FRAMEAMOUNT = [3] 
+
+SPEED = [4]
+
+---
+
+TYPE = [JUMPLOOP] //The "normal" Jumping Animation
+
+NAME = [JUMPING4] //Short for: JumpAnimation #2. Who would've guessed.
+
+LOOP = [YES] 
+
+FRAMEAMOUNT = [1] 
+
+SPEED = [2]
+
+###
+
+#4 JUMPING BACK
+
+---
+
+TYPE = [JUMPSTART] //The character's Animation before he starts the Jump.
+
+NAME = [JUMPING1] //Short for: Well, I just numbered them. Why not. 
+
+LOOP = [NO] 
+
+FRAMEAMOUNT = [1] 
+
+SPEED = [4] 
+
+---
+
+TYPE = [JUMPIDLEUP] //The "normal" Jumping Animation
+
+NAME = [JUMPING2] //Short for: JumpAnimation #2. Who would've guessed.
+
+LOOP = [NO] 
+
+FRAMEAMOUNT = [3] 
+
+SPEED = [4]
+
+---
+
+TYPE = [JUMPLOOP] //The "normal" Jumping Animation
+
+NAME = [JUMPING4] //Short for: JumpAnimation #2. Who would've guessed.
+
+LOOP = [YES] 
+
+FRAMEAMOUNT = [1] 
+
+SPEED = [2]
+
+###
+
+#5 NORMAL ANIMATIONS
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [KICKWEAK]
+
+BUTTONS = [A] 
+
+FRAMEAMOUNT = [3] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [GROUND]
+
+ENEMY ACCELERATION X-AXIS = [7] 
+
+ENEMY ACCELERATION Y-AXIS = [0] 
+
+RANGE X-AXIS = [90]
+
+RANGE Y-AXIS = [0]
+
+SOUND EFFECT - MISS = [MISSWKPN]
+
+SOUND EFFECT FRAME - MISS = [2]
+
+SOUND EFFECT - HIT = [HIT_WKPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [15] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [KICKMEDI]
+
+BUTTONS = [B] 
+
+FRAMEAMOUNT = [6] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [GROUND]
+
+ENEMY ACCELERATION X-AXIS = [8] 
+
+ENEMY ACCELERATION Y-AXIS = [5] 
+
+RANGE X-AXIS = [95]
+
+RANGE Y-AXIS = [76]
+
+SOUND EFFECT - MISS = [MISSMDPN]
+
+SOUND EFFECT FRAME - MISS = [4]
+
+SOUND EFFECT - HIT = [HIT_MDPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [60] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [PUNCHWEK]
+
+BUTTONS = [X] 
+
+FRAMEAMOUNT = [4] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [GROUND]
+
+ENEMY ACCELERATION X-AXIS = [5] 
+
+ENEMY ACCELERATION Y-AXIS = [8] 
+
+RANGE X-AXIS = [105]
+
+RANGE Y-AXIS = [74]
+
+SOUND EFFECT - MISS = [MISSWKPN]
+
+SOUND EFFECT FRAME - MISS = [3]
+
+SOUND EFFECT - HIT = [HIT_WKPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [15] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [PUNCHMED]
+
+BUTTONS = [Y] 
+
+FRAMEAMOUNT = [5] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [GROUND]
+
+ENEMY ACCELERATION X-AXIS = [9] 
+
+ENEMY ACCELERATION Y-AXIS = [0] 
+
+RANGE X-AXIS = [95]
+
+RANGE Y-AXIS = [70]
+
+SOUND EFFECT - MISS = [MISSWKPN]
+
+SOUND EFFECT FRAME - MISS = [4]
+
+SOUND EFFECT - HIT = [HIT_WKPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [40] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [PUNCHSTR]
+
+BUTTONS = [L] 
+
+FRAMEAMOUNT = [7] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [GROUND]
+
+ENEMY ACCELERATION X-AXIS = [10] 
+
+ENEMY ACCELERATION Y-AXIS = [10] 
+
+RANGE X-AXIS = [128]
+
+RANGE Y-AXIS = [128]
+
+SOUND EFFECT - MISS = [MISSSTPN]
+
+SOUND EFFECT FRAME - MISS = [4]
+
+SOUND EFFECT - HIT = [HIT_STPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [50] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [KICKSTRO]
+
+BUTTONS = [R] 
+
+FRAMEAMOUNT = [7] 
+
+SPEED = [5] 
+
+LOOP = [NO]
+
+LEVEL = [GROUND]
+
+ENEMY ACCELERATION X-AXIS = [10] 
+
+ENEMY ACCELERATION Y-AXIS = [0] 
+
+RANGE X-AXIS = [109]
+
+RANGE Y-AXIS = [0]
+
+SOUND EFFECT - MISS = [MISSSTPN]
+
+SOUND EFFECT FRAME - MISS = [4]
+
+SOUND EFFECT - HIT = [HIT_STPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [60] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [CROUWKPN]
+
+BUTTONS = [X] 
+
+FRAMEAMOUNT = [4] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [CROUCH]
+
+ENEMY ACCELERATION X-AXIS = [5] 
+
+ENEMY ACCELERATION Y-AXIS = [0] 
+
+RANGE X-AXIS = [83]
+
+RANGE Y-AXIS = [88]
+
+SOUND EFFECT - MISS = [MISSWKPN]
+
+SOUND EFFECT FRAME - MISS = [3]
+
+SOUND EFFECT - HIT = [HIT_WKPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [15] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [CROUMDPN]
+
+BUTTONS = [Y] 
+
+FRAMEAMOUNT = [11] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [CROUCH]
+
+ENEMY ACCELERATION X-AXIS = [9] 
+
+ENEMY ACCELERATION Y-AXIS = [0] 
+
+RANGE X-AXIS = [102]
+
+RANGE Y-AXIS = [80]
+
+SOUND EFFECT - MISS = [MISSMDPN]
+
+SOUND EFFECT FRAME - MISS = [6]
+
+SOUND EFFECT - HIT = [HIT_MDPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [40] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [CROUWKKK]
+
+BUTTONS = [A] 
+
+FRAMEAMOUNT = [3] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [CROUCH]
+
+ENEMY ACCELERATION X-AXIS = [5] 
+
+ENEMY ACCELERATION Y-AXIS = [5] 
+
+RANGE X-AXIS = [75]
+
+RANGE Y-AXIS = [4]
+
+SOUND EFFECT - MISS = [MISSWKPN]
+
+SOUND EFFECT FRAME - MISS = [2]
+
+SOUND EFFECT - HIT = [HIT_WKPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [20] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [CROUMDKK]
+
+BUTTONS = [B] 
+
+FRAMEAMOUNT = [9] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [CROUCH]
+
+ENEMY ACCELERATION X-AXIS = [8] 
+
+ENEMY ACCELERATION Y-AXIS = [] 
+
+RANGE X-AXIS = [115]
+
+RANGE Y-AXIS = [85]
+
+SOUND EFFECT - MISS = [MISSMDPN]
+
+SOUND EFFECT FRAME - MISS = [5]
+
+SOUND EFFECT - HIT = [HIT_MDPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [35] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [CROUSTPN]
+
+BUTTONS = [L] 
+
+FRAMEAMOUNT = [9] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [CROUCH]
+
+ENEMY ACCELERATION X-AXIS = [10] 
+
+ENEMY ACCELERATION Y-AXIS = [0] 
+
+RANGE X-AXIS = [120]
+
+RANGE Y-AXIS = [93]
+
+SOUND EFFECT - MISS = [MISSSTPN]
+
+SOUND EFFECT FRAME - MISS = [5]
+
+SOUND EFFECT - HIT = [HIT_STPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [50] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [CROUSTKK]
+
+BUTTONS = [R] 
+
+FRAMEAMOUNT = [7] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [CROUCH]
+
+ENEMY ACCELERATION X-AXIS = [10] 
+
+ENEMY ACCELERATION Y-AXIS = [0] 
+
+RANGE X-AXIS = [105]
+
+RANGE Y-AXIS = [104]
+
+SOUND EFFECT - MISS = [MISSSTPN]
+
+SOUND EFFECT FRAME - MISS = [4]
+
+SOUND EFFECT - HIT = [HIT_STPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [70] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [JUMPSTPN]
+
+BUTTONS = [A] 
+
+FRAMEAMOUNT = [3] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [AIR]
+
+ENEMY ACCELERATION X-AXIS = [5] 
+
+ENEMY ACCELERATION Y-AXIS = [0] 
+
+RANGE X-AXIS = [95]
+
+RANGE Y-AXIS = [999]
+
+SOUND EFFECT - MISS = [MISSWKPN]
+
+SOUND EFFECT FRAME - MISS = [2]
+
+SOUND EFFECT - HIT = [HIT_WKPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [20] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [JUMPSTPN]
+
+BUTTONS = [X] 
+
+FRAMEAMOUNT = [3] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [AIR]
+
+ENEMY ACCELERATION X-AXIS = [5] 
+
+ENEMY ACCELERATION Y-AXIS = [0] 
+
+RANGE X-AXIS = [95]
+
+RANGE Y-AXIS = [999]
+
+SOUND EFFECT - MISS = [MISSWKPN]
+
+SOUND EFFECT FRAME - MISS = [2]
+
+SOUND EFFECT - HIT = [HIT_WKPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [20] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [JUMPMDPN]
+
+BUTTONS = [B] 
+
+FRAMEAMOUNT = [7] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [AIR]
+
+ENEMY ACCELERATION X-AXIS = [10] 
+
+ENEMY ACCELERATION Y-AXIS = [0] 
+
+RANGE X-AXIS = [77]
+
+RANGE Y-AXIS = [999]
+
+SOUND EFFECT - MISS = [MISSMDPN]
+
+SOUND EFFECT FRAME - MISS = [3]
+
+SOUND EFFECT - HIT = [HIT_MDPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [50] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [JUMPMDPN]
+
+BUTTONS = [Y] 
+
+FRAMEAMOUNT = [7] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [AIR]
+
+ENEMY ACCELERATION X-AXIS = [10] 
+
+ENEMY ACCELERATION Y-AXIS = [0] 
+
+RANGE X-AXIS = [77]
+
+RANGE Y-AXIS = [999]
+
+SOUND EFFECT - MISS = [MISSMDPN]
+
+SOUND EFFECT FRAME - MISS = [3]
+
+SOUND EFFECT - HIT = [HIT_MDPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [50] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [JUMPWKPN]
+
+BUTTONS = [L] 
+
+FRAMEAMOUNT = [8] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [AIR]
+
+ENEMY ACCELERATION X-AXIS = [10] 
+
+ENEMY ACCELERATION Y-AXIS = [8] 
+
+RANGE X-AXIS = [85]
+
+RANGE Y-AXIS = [999]
+
+SOUND EFFECT - MISS = [MISSSTPN]
+
+SOUND EFFECT FRAME - MISS = [2]
+
+SOUND EFFECT - HIT = [HIT_STPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [70] //Damage
+
+---
+
+TYPE = [ATTACK]
+
+NAME = [JUMPWKPN]
+
+BUTTONS = [R] 
+
+FRAMEAMOUNT = [8] 
+
+SPEED = [7] 
+
+LOOP = [NO]
+
+LEVEL = [AIR]
+
+ENEMY ACCELERATION X-AXIS = [10] 
+
+ENEMY ACCELERATION Y-AXIS = [8] 
+
+RANGE X-AXIS = [85]
+
+RANGE Y-AXIS = [999]
+
+SOUND EFFECT - MISS = [MISSSTPN]
+
+SOUND EFFECT FRAME - MISS = [2]
+
+SOUND EFFECT - HIT = [HIT_STPN]
+
+SPECIAL ID = [0]
+
+STRENGTH = [70] //Damage
+
+###
+
+#6 THROW ANIMATIONS
+
+THROWAMOUNT = [1] // DUUUUH.
+
+---
+
+SPECIAL ID = [1]
+
+THROWNAME = [OVERTROW] //If the INITIATIONANIMATIONENEMY hits, this Animation takes over.
+
+THROWFRAMEAMOUNT = [5] 
+
++++
+
+THROWSTAGE = [BEFORE] //Does the Frame take place BEFORE, AFTER, or DURING the actual act of throwing?
+
+ENEMYALIGNMENT = [PARALYZED_STANDING] // PARALYZED_STANDING, PARALYZED_LYING, MIRROR_PAR_STANDING, MIRROR_PAR_LYING
+
+FRAMESPEED = [8]
+
+CHARPOSITIONCHANGEX = [0] //The Amount of Pixels this character moves on the X-Axis. Range: -640 to +640
+
+CHARPOSITIONCHANGEY = [0] //The Amount of Pixels this character moves on the Y-Axis. Range: -480 to +480
+
+ENEMYPOSITIONCHANGEX = [0] //The Amount of Pixels the enemy moves on the X-Axis. Range: -640 to +640
+
+ENEMYPOSITIONCHANGEY = [0] //The Amount of Pixels the enemy moves on the Y-Axis. Range: -480 to +480
+
++++
+
+THROWSTAGE = [BEFORE] //Does the Frame take place BEFORE, AFTER, or DURING the actual act of throwing?
+
+ENEMYALIGNMENT = [PARALYZED_STANDING] // PARALYZED_STANDING, PARALYZED_LYING, MIRROR_PAR_STANDING, MIRROR_PAR_LYING
+
+FRAMESPEED = [8]
+
+CHARPOSITIONCHANGEX = [0] //The Amount of Pixels this character moves on the X-Axis. Range: -640 to +640
+
+CHARPOSITIONCHANGEY = [0] //The Amount of Pixels this character moves on the Y-Axis. Range: -480 to +480
+
+ENEMYPOSITIONCHANGEX = [0] //The Amount of Pixels the enemy moves on the X-Axis. Range: -640 to +640
+
+ENEMYPOSITIONCHANGEY = [-10] //The Amount of Pixels the enemy moves on the Y-Axis. Range: -480 to +480
+
++++
+
+THROWSTAGE = [BEFORE] //Does the Frame take place BEFORE, AFTER, or DURING the actual act of throwing?
+
+ENEMYALIGNMENT = [PARALYZED_LYING] // PARALYZED_STANDING, PARALYZED_LYING, MIRROR_PAR_STANDING, MIRROR_PAR_LYING
+
+FRAMESPEED = [8]
+
+CHARPOSITIONCHANGEX = [0] //The Amount of Pixels this character moves on the X-Axis. Range: -640 to +640
+
+CHARPOSITIONCHANGEY = [0] //The Amount of Pixels this character moves on the Y-Axis. Range: -480 to +480
+
+ENEMYPOSITIONCHANGEX = [-60] //The Amount of Pixels the enemy moves on the X-Axis. Range: -640 to +640
+
+ENEMYPOSITIONCHANGEY = [-135] //The Amount of Pixels the enemy moves on the Y-Axis. Range: -480 to +480
+
++++
+
+THROWSTAGE = [BEFORE] //Does the Frame take place BEFORE, AFTER, or DURING the actual act of throwing?
+
+ENEMYALIGNMENT = [PARALYZED_LYING] // PARALYZED_STANDING, PARALYZED_LYING, MIRROR_PAR_STANDING, MIRROR_PAR_LYING
+
+FRAMESPEED = [8]
+
+CHARPOSITIONCHANGEX = [0] //The Amount of Pixels this character moves on the X-Axis. Range: -640 to +640
+
+CHARPOSITIONCHANGEY = [0] //The Amount of Pixels this character moves on the Y-Axis. Range: -480 to +480
+
+ENEMYPOSITIONCHANGEX = [0] //The Amount of Pixels the enemy moves on the X-Axis. Range: -640 to +640
+
+ENEMYPOSITIONCHANGEY = [0] //The Amount of Pixels the enemy moves on the Y-Axis. Range: -480 to +480
+
++++
+
+THROWSTAGE = [DURING]
+
+ENEMYALIGNMENT = [PARALYZED_LYING] 
+
+FRAMESPEED = [16]
+
+CHARPOSITIONCHANGEX = [0] 
+
+CHARPOSITIONCHANGEY = [0] 
+
+ENEMYPOSITIONCHANGEX = [0] 
+
+ENEMYPOSITIONCHANGEY = [0] 
+
+ENEMYACCELERATIONX = [-10] //Keep in mind that the character does not deccelerate in the air! Aerial X-Axis movement is straight.
+
+ENEMYACCELERATIONY = [0] //The D-Engine uses tweaked real-life physics. Due to Gravity, a throwing move will result in a parable. Here you can tweak the starting angle.
+
+STRENGTH = [200]
+
+###
+
+
+#8 SPECIAL EFFECTS
+
+EFFECTAMOUNT = [1]
+
+---
+
+SPECIAL ID = [1]
+
+SIZE X-AXIS = [32]
+SIZE Y-AXIS = [32]
+
+RELATIVE TO CHAR = [YES]
+POSITION X-AXIS = [200]
+POSITION Y-AXIS = [200]
+
+WHICH FRAME INITIATES = [3]
+
+RANGE = [200]
+
+SPEED X-AXIS = [3]
+SPEED Y-AXIS = [3]
+
++++
+
+STAGE = [PRELOOP]
+
+NAME = [HADOUPRE]
+
+FRAMEAMOUNT = [2] //Does the Frame take place BEFORE, AFTER, or DURING the actual act of throwing?
+
+SPEED = [60]
+
++++
+
+STAGE = [LOOP]
+
+NAME = [HADOUDUR]
+
+FRAMEAMOUNT = [2] //Does the Frame take place BEFORE, AFTER, or DURING the actual act of throwing?
+
+SPEED = [60]
+
++++
+
+STAGE = [VANISH]
+
+NAME = [HADOUVAN]
+
+FRAMEAMOUNT = [2] //Does the Frame take place BEFORE, AFTER, or DURING the actual act of throwing?
+
+SPEED = [60]
+
++++
+
+STAGE = [HIT]
+
+NAME = [HADOUHIT]
+
+FRAMEAMOUNT = [2] //Does the Frame take place BEFORE, AFTER, or DURING the actual act of throwing?
+
+SPEED = [60]
+
+###
+
+
+#9 COMBO ANIMATIONS
+
+---
+
+GO TO BUTTONS = [X]
+
+NAME = [PUNCHMD1]
+
+FRAMEAMOUNT = [2]
+
+SPEED = [7]
+
+TYPE = [COMBO]
+
+LOOP = [NO]
+
+ENEMY ACCELERATION X-AXIS = [20]
+ENEMY ACCELERATION Y-AXIS = [0]
+
+STRENGTH = [90]
+
+GO TO SPECIAL = [2]
+
+CHAR POSITION CHANGE X-AXIS = [0]
+CHAR POSITION CHANGE Y-AXIS = [0]
+
+---
+
+GO TO BUTTONS = [X]
+
+NAME = [PUNCHMD2]
+
+FRAMEAMOUNT = [2]
+
+SPEED = [7]
+
+TYPE = [COMBO]
+
+LOOP = [NO]
+
+ENEMY ACCELERATION X-AXIS = [20]
+ENEMY ACCELERATION Y-AXIS = [0]
+
+STRENGTH = [90]
+
+GO TO SPECIAL = [1]
+
+CHAR POSITION CHANGE X-AXIS = [0]
+CHAR POSITION CHANGE Y-AXIS = [0]
+
+---
+
+GO TO BUTTONS = [Y]
+
+NAME = [PUNCHST1]
+
+FRAMEAMOUNT = [4]
+
+SPEED = [7]
+
+TYPE = [COMBO]
+
+LOOP = [NO]
+
+ENEMY ACCELERATION X-AXIS = [20]
+ENEMY ACCELERATION Y-AXIS = [0]
+
+STRENGTH = [90]
+
+GO TO SPECIAL = [4]
+
+CHAR POSITION CHANGE X-AXIS = [0]
+CHAR POSITION CHANGE Y-AXIS = [0]
+
+---
+
+GO TO BUTTONS = [Y]
+
+NAME = [PUNCHST2]
+
+FRAMEAMOUNT = [2]
+
+SPEED = [7]
+
+TYPE = [COMBO]
+
+LOOP = [NO]
+
+ENEMY ACCELERATION X-AXIS = [20]
+ENEMY ACCELERATION Y-AXIS = [0]
+
+STRENGTH = [90]
+
+GO TO SPECIAL = [3]
+
+CHAR POSITION CHANGE X-AXIS = [0]
+CHAR POSITION CHANGE Y-AXIS = [0]
+
+
+###
+
+#10 OMNI ATTACKS
+
+
+ANIMATION AMOUNT = [1]
+
+---
+
+SPECIAL ID = [1]
+
++++
+
+ENEMY ALIGNMENT = [PARALYZED_STANDING]
+
+CHARACTER ANIMATION NAME = [D4C_BOOM]
+
+CHARACTER FRAME AMOUNT = [6]
+
+CHARACTER ANIMATION SPEED = [7]
+
+CHARACTER WHICH FRAME = [1]
+
+CHARACTER POSITION CHANGE X-AXIS = [0]
+CHARACTER POSITION CHANGE Y-AXIS = [0]
+
+ENEMY POSITION CHANGE X-AXIS = [0]
+ENEMY POSITION CHANGE Y-AXIS = [0]
+
+CHARACTER MOVEMENT X-AXIS = [0]
+CHARACTER MOVEMENT Y-AXIS = [0]
+
+ENEMY MOVEMENT X-AXIS = [0]
+ENEMY MOVEMENT Y-AXIS = [0]
+
+ENEMY ACCELERATION X-AXIS = [30]
+ENEMY ACCELERATION Y-AXIS = [10]
+
+ANIMATION STRENGTH = [0]
+
+DURATION = [3000]
+
+###

@@ -1,0 +1,13 @@
+CharacterMoveInformationFile .NFO
+
+CharacterName="CAPTDC"
+
+AnimationAmount="1"
+
+---Animations---
+
+INITIATIONBUTTONS=[NONE]
+ANIMATIONNAME=[STANDING]
+ANIMATIONID=[1]
+FRAMEAMOUNT=[4]
+ANIMATIONSPEED=[40]
